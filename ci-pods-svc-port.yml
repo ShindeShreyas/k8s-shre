@@ -21,7 +21,7 @@ metadata:
     app: ci
     env: dev
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: ci
   ports:
