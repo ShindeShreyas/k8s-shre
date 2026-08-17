@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cipod
+  labels:
+    app: ci
+spec:
+  container:
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+      - name: nginx:port
+        containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ci-svc
+  labels:
+    app: ci
+    env: dev
+spec:
+  type: ClusterIP
+  selector:
+    app: ci
+  ports:
+    - name: ci-svc-port
+      port: 80
+      targetPort: 80
