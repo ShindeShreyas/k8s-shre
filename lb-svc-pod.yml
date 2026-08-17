@@ -7,14 +7,14 @@ metadata:
 spec:
   containers: 
     - name: apache-container
-      images: apache2:latest
+      image: httpd:latest
       ports:
         - name: apache-port
           containerPort: 80
 ---
 apiVersion: v1
 kind: service
-matadata:
+metadata:
   name: lb-services
   labels:
     app: lb-ci
