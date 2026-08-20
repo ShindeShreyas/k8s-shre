@@ -26,4 +26,4 @@ spec:
     - name: lb-svc-port
       protocol: TCP
       port: 80
-      targetPort: 80
+      targetPort: 80   // add comment
