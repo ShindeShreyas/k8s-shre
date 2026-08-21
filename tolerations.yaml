@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tpod
+  labels:
+    app: myapp
+
+spec:
+  tolerations:
+    - key: "pod"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+
+  containers:
+   - name: nginx-cont
+     image: nginx:latest
+     ports:
+       - containerPort: 80
+
+  nodeSelector:
+    type: db
