@@ -6,9 +6,9 @@ metadata:
     app: rs
 
 spec: 
-  replicaset: 2
+  replicas: 2
   selector:
-    matchlabels:
+    matchLabels:
       app: rs
     
   template:
