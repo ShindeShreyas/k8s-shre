@@ -1,5 +1,6 @@
-apiVersion: vi
-kind: pod
+apiVersion: v1
+kind: Pod
+
 metadata:
   name: my-pod
   labels:
@@ -7,16 +8,16 @@ metadata:
 
 spec:
   volumes:
-  - name: my-vol 
-    persistantVolumeClaim:
-      claimNmae: my-pvc
+    - name: my-vol
+      persistentVolumeClaim:
+        claimName: my-pvc
 
   containers:
-  - name: nginx-cont
-    image: nginx:latest
-    ports:
-     - containerPort: 80
+    - name: nginx-cont
+      image: nginx:latest
+      ports:
+        - containerPort: 80
 
-    volumeMounts:
-     - name: my-vol 
-       mountPath: /usr/share/nginx/html 
+      volumeMounts:
+        - name: my-vol
+          mountPath: /usr/share/nginx/html
