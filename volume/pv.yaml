@@ -1,17 +1,23 @@
 apiVersion: v1
-kind: PersistantVolume
+kind: PersistentVolume
+
 metadata:
   name: my-pv
-  labela:
+  labels:
     app: pv
 
-spec: 
+spec:
   capacity:
     storage: 10Gi
+
   accessModes:
-    - ReadWritOnce
-  persistentVolumesReclaimPolicy: Retain
+    - ReadWriteOnce
+
+  persistentVolumeReclaimPolicy: Retain
+
   volumeMode: Filesystem
+
   storageClassName: standard
+
   hostPath:
     path: /mnt/data
