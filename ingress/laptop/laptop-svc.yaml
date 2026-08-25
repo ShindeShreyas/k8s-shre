@@ -1,0 +1,15 @@
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: laptop-svc
+  labels: 
+    app: laptop
+spec: 
+  type: ClusterIP
+  selector: 
+    app: laptop
+  ports: 
+    - name: laptop-svc-port 
+      protocol: TCP 
+      port: 8080
+      targetPort: 8080
